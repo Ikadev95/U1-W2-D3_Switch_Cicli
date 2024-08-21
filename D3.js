@@ -136,7 +136,7 @@ const eyeColor = {
     yellow: [],
     brown: [],
     red: [],
-    blue_gray: []
+    "blue-gray": []
 };
 
 /* ESERCIZIO 5
@@ -158,7 +158,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
             eyeColor.red.push(starWarsCharacters[i].name);
             break;
         case "blue-gray":
-            eyeColor.blue_gray.push(starWarsCharacters[i].name);
+            eyeColor["blue-gray"].push(starWarsCharacters[i].name);
             break;
     }
 }
@@ -223,7 +223,9 @@ console.log(charactersNames);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
-let personaggio = starWarsCharacters[1];
+let num = Math.round(Math.random() * (starWarsCharacters.length - 1)); // Math.round -> arrotonda all'intero il numero random generato
+let personaggio = starWarsCharacters[num];
+console.log("numero" + num);
 
 console.log(`Il personaggio selezionato è ${personaggio.name}.`);
 console.log(`È alto ${personaggio.height} cm e pesa ${personaggio.mass} kg.`);
